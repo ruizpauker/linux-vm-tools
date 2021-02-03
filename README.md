@@ -1,2 +1,29 @@
-# This Repo Has Been Archived
-This repo has been archived. You can continue to use the optimized Ubuntu image that is available by default in the Hyper-V Quick Create Gallery. If you are looking for an integrated Linux developer experience on Windows, we encourage you to check out [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/). WSL 2 lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup. The ability to run Linux GUI apps in WSL is also on the [roadmap](https://devblogs.microsoft.com/commandline/whats-new-in-the-windows-subsystem-for-linux-september-2020/#gui-apps).
+# Information
+
+Clone of [github.com/microsoft/linux-vm-tools](https://github.com/microsoft/linux-vm-tools).
+
+The original repository is archived, forking it here just in case the original is deleted.
+
+
+## Instructions
+
+See [this](https://askubuntu.com/a/1251827/739717) StackOverflow answer for more info.
+
+## In the linux guest
+
+:warning: **Disable** "Auto Login" if you enabled it.
+
+in a terminal execute:
+```bash
+wget https://raw.githubusercontent.com/ruizpauker/linux-vm-tools/master/ubuntu/18.04/install.sh
+sudo chmod +x install.sh
+sudo ./install.sh
+```
+
+## In the Windows host
+
+In a Powershell console, execute:
+
+```powershell
+Set-VM -VMName <your_vm_name> -EnhancedSessionTransportType HvSocket
+```
